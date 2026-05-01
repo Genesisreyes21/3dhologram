@@ -1,0 +1,74 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+backend/.venv/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+
+# macOS / editor
+.DS_Store
+__MACOSX/
+.vscode/
+.idea/
+*.swp
+
+# Logs and temp
+*.log
+tmp/
+temp/
+
+# Generated project outputs and uploads
+captures/
+outputs/
+generated/
+backend/captures/
+backend/outputs/
+backend/generated/
+backend/uploads/
+backend/tmp/
+
+# Meshes, checkpoints, and local model files
+*.obj
+*.mtl
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.tar
+*.tar.gz
+*.zip
+deca_model.tar
+DECA/
+deca/
+deca-hologram/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/

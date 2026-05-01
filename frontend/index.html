@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DECA Particle Hologram</title>
+    <link rel="stylesheet" href="./style.css?v=20260423y" />
+  </head>
+  <body>
+    <div class="ambient-grid"></div>
+    <div class="app-shell">
+      <main class="workspace">
+        <section class="control-deck glass-panel" aria-label="Capture and reconstruction controls">
+          <div class="capture-stack">
+            <div class="panel-heading">
+              <span class="panel-kicker">DECA Capture</span>
+              <h2>Controls</h2>
+            </div>
+
+            <div class="camera-frame">
+              <video id="webcam" autoplay muted playsinline></video>
+              <canvas id="capture-canvas" hidden></canvas>
+              <div class="camera-reticle" aria-hidden="true"></div>
+              <div id="camera-status" class="camera-status">Camera not started</div>
+              <div id="facemesh-status" class="facemesh-status">faceMesh idle</div>
+            </div>
+
+            <div class="button-row">
+              <button id="start-camera" class="holo-button">Start Camera</button>
+              <button id="capture-face" class="holo-button secondary" disabled>Capture Face</button>
+            </div>
+
+            <div class="snapshot-card">
+              <img id="snapshot-preview" alt="Latest captured webcam frame" />
+              <div>
+                <span class="panel-kicker">Snapshot</span>
+                <p id="snapshot-label">No frame captured yet.</p>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button id="generate-hologram" class="holo-button primary" disabled>
+                Generate Hologram
+              </button>
+            </div>
+
+            <div id="status" class="status-line">Ready. Start the camera, then launch a live hologram.</div>
+          </div>
+
+          <div class="control-scroll">
+            <div class="control-stack" aria-label="Hologram controls">
+              <label>
+                <span>Particles</span>
+                <input id="point-count" type="range" min="6000" max="20000" step="1000" value="14000" />
+                <output id="point-count-value">14000</output>
+              </label>
+              <label>
+                <span>Noise Drift</span>
+                <input id="noise-strength" type="range" min="0" max="100" step="1" value="22" />
+                <output id="noise-strength-value">22</output>
+              </label>
+              <label>
+                <span>Mouse Rotation</span>
+                <input id="rotation-strength" type="range" min="0" max="100" step="1" value="100" />
+                <output id="rotation-strength-value">100</output>
+              </label>
+              <label>
+                <span>Particle Size</span>
+                <input id="particle-size" type="range" min="20" max="140" step="1" value="46" />
+                <output id="particle-size-value">46</output>
+              </label>
+              <label>
+                <span>Expansion</span>
+                <input id="expansion" type="range" min="70" max="180" step="1" value="118" />
+                <output id="expansion-value">118</output>
+              </label>
+              <label>
+                <span>Movement</span>
+                <input id="movement" type="range" min="0" max="100" step="1" value="36" />
+                <output id="movement-value">36</output>
+              </label>
+              <label>
+                <span>Brightness</span>
+                <input id="brightness" type="range" min="25" max="180" step="1" value="96" />
+                <output id="brightness-value">96</output>
+              </label>
+              <label>
+                <span>Color Hue</span>
+                <input id="hue" type="range" min="0" max="100" step="1" value="52" />
+                <output id="hue-value">52</output>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <section class="stage glass-panel" aria-label="Particle hologram stage">
+          <div class="stage-header">
+            <div>
+              <span class="panel-kicker">Projection Stage</span>
+              <h2>Hologram</h2>
+            </div>
+            <div id="cloud-meta" class="cloud-meta" aria-live="polite"></div>
+          </div>
+          <div id="hologram-canvas" class="hologram-canvas"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@1/dist/ml5.min.js"></script>
+    <script src="./sketch.js?v=20260423y"></script>
+    <script src="./app.js?v=20260423y"></script>
+  </body>
+</html>

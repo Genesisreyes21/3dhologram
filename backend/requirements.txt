@@ -1,0 +1,19 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pillow>=10.0.0
+numpy>=1.24.0
+python-multipart>=0.0.9
+
+# DECA inference runtime. Keep torch modern on Python 3.12; the backend adds
+# small compatibility shims for DECA/chumpy instead of downgrading to torch 1.6.
+torch>=2.0.0
+torchvision>=0.15.0
+scipy>=1.10.0
+scikit-image>=0.20.0
+opencv-python>=4.8.0
+chumpy>=0.70
+yacs>=0.1.8
+kornia>=0.4.0
+face-alignment>=1.5.0
+fvcore>=0.1.5
+ninja>=1.11.0
