@@ -1,6 +1,6 @@
-# DECA Particle Hologram
+# 3D Particle Hologram
 
-DECA Particle Hologram is a webcam-to-particle prototype. The browser captures a face frame, sends it to a FastAPI backend, the backend runs the released DECA face reconstruction model, and the frontend renders the returned face point cloud as a glowing hologram.
+This is a webcam-to-particle prototype. The browser captures a face frame, sends it to a FastAPI backend, the backend runs the released DECA face reconstruction model, and the frontend renders the returned face point cloud as a glowing hologram.
 
 The app also includes a procedural demo point cloud so the frontend can be tested before DECA is installed.
 
